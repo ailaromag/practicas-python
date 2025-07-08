@@ -16,61 +16,62 @@ def menu():
 
         option = input("Option: ")
 
-        if option == "1":
-            title = input("Title: ")
-            author = input("Author: ")
-            isbn = input("ISBN: ")
-            copies = int(input("Available copies: "))
-            book = Book(title, author, isbn, copies)
-            library.add_book(book)
-            print("Book added successfully.")
+        match option:
+            case "1":
+                title = input("Title: ")
+                author = input("Author: ")
+                isbn = input("ISBN: ")
+                copies = int(input("Available copies: "))
+                book = Book(title, author, isbn, copies)
+                library.add_book(book)
+                print("Book added successfully.")
 
-        elif option == "2":
-            title = input("Search title: ")
-            results = library.search_by_title(title)
-            if results:
-                for book in results:
-                    print(book)
-            else:
-                print("No books found with that title.")
+            case "2":
+                title = input("Search title: ")
+                results = library.search_by_title(title)
+                if results:
+                    for book in results:
+                        print(book)
+                else:
+                    print("No books found with that title.")
 
-        elif option == "3":
-            author = input("Search author: ")
-            results = library.search_by_author(author)
-            if results:
-                for book in results:
-                    print(book)
-            else:
-                print("No books found by that author.")
+            case "3":
+                author = input("Search author: ")
+                results = library.search_by_author(author)
+                if results:
+                    for book in results:
+                        print(book)
+                else:
+                    print("No books found by that author.")
 
-        elif option == "4":
-            isbn = input("ISBN of the book to borrow: ")
-            if library.borrow_book(isbn):
-                print("Book successfully borrowed.")
-            else:
-                print("Book not available for borrowing.")
+            case "4":
+                isbn = input("ISBN of the book to borrow: ")
+                if library.borrow_book(isbn):
+                    print("Book successfully borrowed.")
+                else:
+                    print("Book not available for borrowing.")
 
-        elif option == "5":
-            isbn = input("ISBN of the book to return: ")
-            if library.return_book(isbn):
-                print("Book successfully returned.")
-            else:
-                print("No book found with that ISBN.")
+            case "5":
+                isbn = input("ISBN of the book to return: ")
+                if library.return_book(isbn):
+                    print("Book successfully returned.")
+                else:
+                    print("No book found with that ISBN.")
 
-        elif option == "6":
-            books = library.list_books()
-            if books:
-                for book in books:
-                    print(book)
-            else:
-                print("There are no books in the library.")
+            case "6":
+                books = library.list_books()
+                if books:
+                    for book in books:
+                        print(book)
+                else:
+                    print("There are no books in the library.")
 
-        elif option == "7":
-            print("Exiting...")
-            break
+            case "7":
+                print("Exiting...")
+                break
 
-        else:
-            print("Invalid option.")
+            case _:
+                print("Invalid option.")
 
 
 if __name__ == '__main__':
