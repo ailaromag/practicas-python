@@ -1,8 +1,6 @@
 ;
 ; Global Editor Config for Adaptive Labbers
 ;
-; This is an ini style configuration. See http://editorconfig.org/ for more information on this file.
-;
 ; Top level editor config.
 root = true
 ; Always use Unix style new lines with new line ending on every file and trim whitespace
