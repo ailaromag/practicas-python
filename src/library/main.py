@@ -12,7 +12,9 @@ def menu():
         print("4. Borrow book")
         print("5. Return book")
         print("6. List all books")
-        print("7. Exit")
+        print("7. Save library")
+        print("8. Load library")
+        print("9. Exit")
 
         option = input("Option: ")
 
@@ -67,6 +69,14 @@ def menu():
                     print("There are no books in the library.")
 
             case "7":
+                filename = input("Enter filename to save (.json): ")
+                library.save(filename)
+                
+            case "8":
+                filename = input("Enter filename to load (.json): ")
+                library.load(filename)
+                
+            case "9":
                 print("Exiting...")
                 break
 
