@@ -5,6 +5,7 @@ __pycache__/
 # Archivos de entorno virtual
 venv/
 env/
+data/
 
 # Configuración de VS Code
 .vscode/
